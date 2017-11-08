@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function () {
+            //获取所有的button
+            var btnList = document.getElementsByTagName("button");
+            var btnListLength = btnList.length;
+            for (var i = 0; i < btnList.length; i++) {
+                btnList[i].index = i;
+                btnList[i].onclick = function () {
+                    alert("当前索引index值："+this.index);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <button>点击按钮1</button>
+    <button>点击按钮2</button>
+    <button>点击按钮3</button>
+    <button>点击按钮4</button>
+    <button>点击按钮5</button>
+    <button>点击按钮6</button>
+</body>
+</html>
