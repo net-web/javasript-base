@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #main {
+            width: 300px;
+            height: 180px;
+            border: 1px solid #D2E1F1;
+            margin: 50px auto 0;
+        }
+        .yunshi {
+            padding-left: 20px;
+            color: #0888d1;
+            font-weight: 700;
+        }
+        #box {
+            width: 210px;
+            height: 50px;
+            padding: 0 30px;
+            margin-top: 10px;
+        }
+        #box .left {
+            width: 50px;
+            height: 50px;
+            background: url("bg.png") no-repeat left top;
+            float: left;
+        }
+        #box .right {
+            width: 150px;
+            height: 50px;
+            float: right;
+            margin-left: 10px;
+        }
+        .rbottom {
+            height: 20px;
+            width: 150px;
+            display: block;
+            font-size: 14px;
+        }
+        .today {
+            float: left;
+        }
+        #arrow {
+            height: 13px;
+            width: 80px;
+            float: right;
+            background: url("bg-arrow.png") no-repeat top left;
+            position: relative;
+        }
+        #show-arrow {
+            height: 13px;
+            width: 80px;
+            background: url("bg-arrow.png") no-repeat bottom left;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .introduce {
+            padding: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //评分
+            var arr = [10,9,8,7.5,6];
+            var content = ["今日你的所作所为容易引起他人的不满甚至口舌。即使如此，你也还是容易坚持己见，展现出对自己很..",
+                "今天仍然是不算太平的一天，虽然生活中并没有什么矛盾冲突，但却容易有意外的紧急事情让你处理，...",
+                "今天的你内心似乎有一股莫名的执着，让你烦躁不安。这股力量如果放在了工作上，却会有意想不到的...",
+                "今天的你需要格外注意身体的隐患，特别容易因为过度消耗体力脑力，产生一些旧疾复发，或者是突发...",
+                "今天跟伴侣的交流似乎并不是那么畅通，总觉得对方有一点不解风情，对答困难，很容易失去耐心而发..."];
+            function $(id){return document.getElementById(id);}
+            //获取星座的索引
+            var XDom = $("xingzuo");
+            XDom.onchange = function () {
+                //var Xindex = this.value;//当前索引值
+                $("left").style.backgroundPosition = "0 "+(this.value*-50)+"px";
+                $("show-arrow").style.width = arr[this.value]*8 + "px";
+                $("introduce").innerHTML = content[this.value];
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="main">
+        <div class="yunshi">星座运势</div>
+        <div id="box">
+            <div class="left" id="left"></div>
+            <div class="right">
+                <div class="rtop">
+                    <select name="" id="xingzuo">
+                        <option value="0">白羊座(03.21-04.29)</option>
+                        <option value="1">金牛座(04.20-05.20)</option>
+                        <option value="2">双子座(05.21-04.21)</option>
+                        <option value="3">巨蟹座(06.22-07.22)</option>
+                        <option value="4">狮子座(07.23-08.23)</option>
+                    </select>
+                </div>
+                <div class="rbottom">
+                    <div class="today">今日运势:</div>
+                    <div id="arrow">
+                        <div id="show-arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="introduce" id="introduce">今日你的所作所为容易引起他人的不满甚至口舌。即使如此，你也还是容易坚持己见，展现出对自己很..</div>
+    </div>
+</body>
+</html>
