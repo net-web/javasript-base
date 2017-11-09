@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box {
+            width: 452px;
+            height: 60px;
+            padding-top: 452px;
+            margin: 0 auto;
+            background: url("images/0a.jpg") no-repeat;
+        }
+        #box ul {
+            height: 60px;
+            margin: 0;
+        }
+        #box ul li {
+            float: left;
+            height: 58px;
+            width: 58px;
+            display: block;
+            list-style: none;
+            text-align: center;
+            line-height: 58px;
+            margin: 0 10px 0 10px;
+            border: 1px solid #fff;
+        }
+        #box ul li:hover {
+            border: 1px solid #e53e41;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var bgBox = document.getElementById("box");
+            function changeImage(id,urlImg) {
+                var box = document.getElementById(id);
+                box.onmouseover = function () {
+                    bgBox.style.backgroundImage = urlImg;
+                }
+            }
+            changeImage("box0","url(images/0a.jpg)");
+            changeImage("box1","url(images/1a.jpg)");
+            changeImage("box2","url(images/2a.jpg)");
+            changeImage("box3","url(images/3a.jpg)");
+            changeImage("box4","url(images/4a.jpg)");
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li id="box0"><img src="images/0a1.jpg" alt=""/></li>
+            <li id="box1"><img src="images/1a1.jpg" alt=""/></li>
+            <li id="box2"><img src="images/2a1.jpg" alt=""/></li>
+            <li id="box3"><img src="images/3a1.jpg" alt=""/></li>
+            <li id="box4"><img src="images/4a1.jpg" alt=""/></li>
+        </ul>
+    </div>
+</body>
+</html>
